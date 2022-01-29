@@ -16,7 +16,7 @@ detail.education_detail = [];
 
 app.get("/", (req, res) => {
     res.render('index', {
-        detail: detail
+        detail: detail,
     });
 });
 app.get("/personal-detail", (req, res) => {
