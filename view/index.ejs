@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <title>Resume Builder</title>
+</head>
+
+<body>
+    <div id="main-content">
+        <section id="personal-detail-section">
+            <%if(detail.personal_detail){%>
+                <h1>
+                    <p id="name">
+                        <%= detail.personal_detail.name %>
+                    </p>
+                </h1>
+                <p> <b>Phone no-</b> <span id="phone-number"> <%= detail.personal_detail.contact %> </span> </p>
+                <p> <b>Email-</b> <span id="email"> <%= detail.personal_detail.email %> </span> </p>
+                <%}else{%>
+                    <form method="GET" action="/personal-detail">
+                        <button> add+ </button>
+                    </form>
+                    <%}%>
+        </section>
+
+
+
+        <section id="info-section">
+            <div class="info-card">
+                <div class="info-card-head">
+                    <h3>EDUCATION</h3>
+                </div>
+                <%if(detail.education_detail){%>
+                    <ul class="info-card-detail">
+                        <% for(let detail1 of detail.education_detail ){ %>
+                            <li style="margin-top:5px">
+                                <div class="info-card-content">
+                                    <h4>
+                                        <%= detail1.institute %>
+                                    </h4>
+                                    <h4>
+                                        <%=detail1.from%> -
+                                            <%=detail1.to%>
+                                    </h4>
+                                    <h4>CGPA/% -
+                                        <%=detail1.percent%>
+                                    </h4>
+                                </div>
+                            </li>
+                            <%} %>
+                    </ul>
+                    <%}%>
+                        <form method="GET" action="/education-detail">
+                            <button>ADD+</button>
+                        </form>
+            </div>
+            <div class="info-card">
+                <div class="info-card-head">
+                    <h3>TECHNICAL SKILLS</h3>
+                </div>
+                <ul class="info-card-detail">
+                    <li>
+                        <b>Languages: </b>Java,C++,HTML
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="info-card">
+                <div class="info-card-head">
+                    <h3>PROJECT</h3>
+                </div>
+                <ul class="info-card-detail">
+                    <li>
+                        <div class="info-card-content">
+                            <div class="info-card-title">
+                                <h4>To Do List</h4>
+                            </div>
+                            <div class="info-card-desc">
+                                <p>
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum eaque ad, labore at blanditiis praesentium esse voluptates inventore qui asperiores voluptatum ipsum. Nisi, error impedit! Laudantium vel ut est.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="info-card-content">
+                            <div class="info-card-title">
+                                <h4>To Do List</h4>
+                            </div>
+                            <div class="info-card-desc">
+                                <p>
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum eaque ad, labore at blanditiis praesentium esse voluptates inventore qui asperiores voluptatum ipsum. Nisi, error impedit! Laudantium vel ut est.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="info-card">
+                <div class="info-card-head">
+                    <h3>WORK EXPERIENCE</h3>
+                </div>
+                <ul class="info-card-detail">
+                    <li>
+                        <div class="info-card-content">
+                            <div class="info-card-title">
+                                <h4>To Do List</h4>
+                            </div>
+                            <div class="info-card-desc">
+                                <p>
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum eaque ad, labore at blanditiis praesentium esse voluptates inventore qui asperiores voluptatum ipsum. Nisi, error impedit! Laudantium vel ut est.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="info-card-content">
+                            <div class="info-card-title">
+                                <h4>To Do List</h4>
+                            </div>
+                            <div class="info-card-desc">
+                                <p>
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum eaque ad, labore at blanditiis praesentium esse voluptates inventore qui asperiores voluptatum ipsum. Nisi, error impedit! Laudantium vel ut est.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-head">
+                    <h3>ACHIEVEMENTS</h3>
+                </div>
+                <ul class="info-card-detail">
+                    <li>
+                        hello i won gold
+                    </li>
+                    <li>
+                        hello i won gold
+                    </li>
+                    <li>
+                        hello i won gold
+                    </li>
+                </ul>
+            </div>
+
+
+        </section>
+    </div>
+</body>
+
+</html>

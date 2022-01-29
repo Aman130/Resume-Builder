@@ -1,0 +1,74 @@
+body {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    /* border: 2px black solid; */
+    padding: 20px;
+    background: #BBD2C5;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #536976, #BBD2C5);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #536976, #BBD2C5);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#main-content {
+    background-color: whitesmoke;
+    width: 800px;
+    height: auto;
+    min-height: 800px;
+    border: 2px black solid;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#personal-detail-section {
+    height: 70px;
+    width: 800px;
+    align-content: center;
+}
+
+#info-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-card {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.info-card-head {
+    background-color: rgb(202, 187, 187);
+    padding: 5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-family: Oswald, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.info-card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+ul {
+    list-style-type: none;
+    padding: 4px;
+}
+
+li {
+    margin: 0;
+}
