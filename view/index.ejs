@@ -25,12 +25,10 @@
                 <p> <b>Email-</b> <span id="email"> <%= detail.personal_detail.email %> </span> </p>
                 <%}else{%>
                     <form method="GET" action="/personal-detail">
-                        <button> add+ </button>
+                        <button> ADD+ </button>
                     </form>
                     <%}%>
         </section>
-
-
 
         <section id="info-section">
             <div class="info-card">
@@ -56,19 +54,27 @@
                             </li>
                             <%} %>
                     </ul>
-                    <%}%>
-                        <form method="GET" action="/education-detail">
-                            <button>ADD+</button>
-                        </form>
+                <%}%>
+                <form method="GET" action="/education-detail">
+                    <button>ADD+</button>
+                </form>
             </div>
+
             <div class="info-card">
                 <div class="info-card-head">
                     <h3>TECHNICAL SKILLS</h3>
                 </div>
+                
                 <ul class="info-card-detail">
-                    <li>
-                        <b>Languages: </b>Java,C++,HTML
-                    </li>
+                    <%if(detail.technical_skills){%>
+                        <li>
+                            <b>Languages: </b><%=detail.technical_skills.languages%>
+                        </li>
+                    <%}else{%>
+                        <form method="GET" action="/technical-skills">
+                        <button>ADD+</button>
+                    </form>
+                    <%}%>
                 </ul>
             </div>
 

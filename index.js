@@ -27,6 +27,15 @@ app.get("/education-detail", (req, res) => {
     res.render('education-detail');
 });
 
+app.get("/education-detail", (req, res) => {
+    res.render('education-detail');
+});
+
+app.get("/Technical-Skills", (req, res) => {
+    res.render('technical-skills');
+});
+
+
 
 
 
@@ -36,6 +45,10 @@ app.post("/personal-detail", (req, res) => {
 });
 app.post("/education-detail", (req, res) => {
     detail.education_detail.push(req.body);
+    res.redirect('/');
+});
+app.post("/Technical-Skills", (req, res) => {
+    detail.technical_skills=req.body;
     res.redirect('/');
 });
 
