@@ -1,17 +1,26 @@
-body {
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.navbar{
+    background-color: #92A9BD;
+    color: #303438;
+    height:50px;
+    border-bottom: 2px black solid;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-content {
     font-family: "Noto Sans", sans-serif;
     font-size: 16px;
     margin: 0;
     display: flex;
     justify-content: center;
-    /* border: 2px black solid; */
     padding: 20px;
-    background: #BBD2C5;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #536976, #BBD2C5);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #536976, #BBD2C5);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #92A9BD;
 }
 
 #main-content {
@@ -43,9 +52,18 @@ body {
 }
 
 .info-card-head {
-    background-color: rgb(202, 187, 187);
-    padding: 5px;
+    background-color: rgb(177, 172, 172);
+    padding: 2px;
 }
+.info-card-head h3{
+    margin-left: 5px;
+}
+button{
+    width: 800px;
+    padding: 10px;
+    background-color:#c0c5c4;
+}
+
 
 h1,
 h2,

@@ -13,6 +13,9 @@ app.use(express.urlencoded({
 
 const detail = {};
 detail.education_detail = [];
+detail.project_detail=[];
+detail.work_experience=[];
+detail.achievement_detail=[];
 
 app.get("/", (req, res) => {
     res.render('index', {
@@ -35,6 +38,16 @@ app.get("/Technical-Skills", (req, res) => {
     res.render('technical-skills');
 });
 
+app.get("/project-detail", (req, res) => {
+    res.render('project');
+});
+app.get("/work-experience", (req, res) => {
+    res.render('work-experience');
+});
+app.get("/achievement", (req, res) => {
+    res.render('achievement');
+});
+
 
 
 
@@ -49,6 +62,18 @@ app.post("/education-detail", (req, res) => {
 });
 app.post("/Technical-Skills", (req, res) => {
     detail.technical_skills=req.body;
+    res.redirect('/');
+});
+app.post("/project-detail", (req, res) => {
+    detail.project_detail.push(req.body);
+    res.redirect('/');
+});
+app.post("/work-experience", (req, res) => {
+    detail.work_experience.push(req.body);
+    res.redirect('/');
+});
+app.post("/achievement", (req, res) => {
+    detail.achievement_detail.push(req.body);
     res.redirect('/');
 });
 
