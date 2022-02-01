@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+
+<body>
+
+    <h3>Edit Your Education Details</h3>
+
+    <div>
+        <form method="POST" action="/education-detail/<%=detail.id%>">
+            <label for="institute">Institute Name</label>
+            <input type="text" id="institute" name="institute" value="<%=detail.institute%>">
+
+            <label for="from">From</label>
+            <input type="text" id="from" name="from" value="<%=detail.from%>" style="display: inline; width: 20%;">
+            <label for="to">To</label>
+            <input type="text" id="to" name="to" value="<%=detail.to%>" style="display: inline; width: 20%;">
+            <br>
+
+            <label for="percent">Percent/CGPA</label>
+            <input type="text" id="percent" name="percent" value="<%=detail.percent%>">
+
+            <button>Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
