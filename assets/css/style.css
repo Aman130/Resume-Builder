@@ -3,7 +3,10 @@ body{
     padding: 0px;
 }
 .navbar{
-    background-color: #92A9BD;
+    background: #3494E6; 
+background: -webkit-linear-gradient(to right, #EC6EAD, #3494E6); 
+background: linear-gradient(to right, #EC6EAD, #3494E6);
+
     color: #303438;
     height:50px;
     border-bottom: 2px black solid;
@@ -20,11 +23,13 @@ body{
     display: flex;
     justify-content: center;
     padding: 20px;
-    background-color: #92A9BD;
+    background: #3494E6;
+    background: -webkit-linear-gradient(to right, #EC6EAD, #3494E6);
+    background: linear-gradient(to right, #EC6EAD, #3494E6);
 }
 
 #main-content {
-    background-color: whitesmoke;
+    background-color: rgb(236, 232, 232);
     width: 800px;
     height: auto;
     min-height: 800px;
@@ -35,7 +40,7 @@ body{
 }
 
 #personal-detail-section {
-    height: 70px;
+    height: 90px;
     width: 800px;
     align-content: center;
 }
@@ -59,9 +64,17 @@ body{
     margin-left: 5px;
 }
 button{
-    width: 800px;
+    width: 100px;
+    margin-left: 350px;
+    border: 1px solid;
     padding: 10px;
-    background-color:#c0c5c4;
+    background-color:rgb(177, 172, 172);
+
+    opacity: 0.8;
+    transition: 0.3s;
+}
+button:hover{
+    opacity: 1;
 }
 
 

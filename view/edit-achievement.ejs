@@ -9,9 +9,9 @@
     <div>
         <h3>Edit Your Achievement</h3>
 
-        <form method="POST" action="/achievement">
+        <form method="POST" action="/achievement/<%=detail.id%>">
             <label for="achievement">Achievement</label>
-            <input type="text" id="achievement" name="achievement" value="">
+            <input type="text" id="achievement" name="achievement" value="<%=detail.achievement%>">
             <button>Submit</button>
         </form>
     </div>

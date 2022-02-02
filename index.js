@@ -59,6 +59,7 @@ app.get("/personal-detail/:id",(req,res)=>{
         detail: detail.personal_detail,
     });
 });
+
 app.get("/education-detail/:id",(req,res)=>{
     const {id}=req.params;
     let ind;
@@ -70,22 +71,47 @@ app.get("/education-detail/:id",(req,res)=>{
         }
     }
     res.render("edit-education-detail",{detail:detail.education_detail[ind]});
-    // res.render("edit-education-detail");
 });
 app.get("/techincal-skills/:id",(req,res)=>{
-    res.send("hello3");
+    res.render("edit-technical-skills",{detail: detail.technical_skills});
 });
+
 app.get("/project-detail/:id",(req,res)=>{
-    res.send("hello4");
+    const {id}=req.params;
+    let ind;
+    for(let i=0;i<detail.project_detail.length;i++){
+        const values=Object.values(detail.project_detail[i]);
+        if(values.indexOf(id)!=-1){
+            ind=i;
+            break;
+        }
+    }
+    res.render("edit-project",{detail:detail.project_detail[ind]});
 });
 app.get("/work-experience/:id",(req,res)=>{
-    res.send("hello5");
+    const {id}=req.params;
+    let ind;
+    for(let i=0;i<detail.work_experience.length;i++){
+        const values=Object.values(detail.work_experience[i]);
+        if(values.indexOf(id)!=-1){
+            ind=i;
+            break;
+        }
+    }
+    res.render("edit-work-experience",{detail:detail.work_experience[ind]});
 });
 app.get("/achievement/:id",(req,res)=>{
-    res.send("hello6");
+    const {id}=req.params;
+    let ind;
+    for(let i=0;i<detail.achievement_detail.length;i++){
+        const values=Object.values(detail.achievement_detail[i]);
+        if(values.indexOf(id)!=-1){
+            ind=i;
+            break;
+        }
+    }
+    res.render("edit-achievement",{detail:detail.achievement_detail[ind]});
 });
-
-
 
 
 app.post("/personal-detail", (req, res) => {
@@ -97,8 +123,9 @@ app.post("/education-detail", (req, res) => {
     req.body.id = uuidv4();
     detail.education_detail.push(req.body);
     res.redirect('/');
+
 });
-app.post("/Technical-Skills", (req, res) => {
+app.post("/technical-Skills", (req, res) => {
     req.body.id = uuidv4();
     detail.technical_skills=req.body;
     res.redirect('/');
@@ -121,6 +148,7 @@ app.post("/achievement", (req, res) => {
 
 app.post("/education-detail/:id",(req,res)=>{
     const {id}= req.params;
+    req.body.id=id;
     for(let i=0;i<detail.education_detail.length;i++){
         const values=Object.values(detail.education_detail[i]);
         if(values.indexOf(id)!=-1){
@@ -129,6 +157,45 @@ app.post("/education-detail/:id",(req,res)=>{
         }
     }
     detail.education_detail[ind]=req.body;
+    res.redirect('/');
+});
+app.post("/project-detail/:id",(req,res)=>{
+    const {id}= req.params;
+    req.body.id=id;
+    for(let i=0;i<detail.project_detail.length;i++){
+        const values=Object.values(detail.project_detail[i]);
+        if(values.indexOf(id)!=-1){
+            ind=i;
+            break;
+        }
+    }
+    detail.project_detail[ind]=req.body;
+    res.redirect('/');
+});
+app.post("/work-experience/:id",(req,res)=>{
+    const {id}= req.params;
+    req.body.id=id;
+    for(let i=0;i<detail.work_experience.length;i++){
+        const values=Object.values(detail.work_experience[i]);
+        if(values.indexOf(id)!=-1){
+            ind=i;
+            break;
+        }
+    }
+    detail.work_experience[ind]=req.body;
+    res.redirect('/');
+});
+app.post("/achievement/:id",(req,res)=>{
+    const {id}= req.params;
+    req.body.id=id;
+    for(let i=0;i<detail.achievement_detail.length;i++){
+        const values=Object.values(detail.achievement_detail[i]);
+        if(values.indexOf(id)!=-1){
+            ind=i;
+            break;
+        }
+    }
+    detail.achievement_detail[ind]=req.body;
     res.redirect('/');
 });
 

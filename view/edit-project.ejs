@@ -8,12 +8,12 @@
 <h3>Edit Your Project Details</h3>
 
 <div>
-  <form method="POST" action="/project-detail">
+  <form method="POST" action="/project-detail/<%=detail.id%>">
     <label for="project">Project Name</label>
-    <input type="text" id="project" name="project" value="">
+    <input type="text" id="project" name="project" value="<%=detail.project%>">
 
     <label for="description">Describe Your project</label>
-    <textarea id="description" name="description" rows="4" cols="50" value=""></textarea>
+    <textarea id="description" name="description" rows="4" cols="50" placeholder="Describe your project.."><%=detail.description%></textarea>
 
     <button>Submit</button>
   </form>
