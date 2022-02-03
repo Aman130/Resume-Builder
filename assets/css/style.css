@@ -4,8 +4,8 @@ body{
 }
 .navbar{
     background: #3494E6; 
-background: -webkit-linear-gradient(to right, #EC6EAD, #3494E6); 
-background: linear-gradient(to right, #EC6EAD, #3494E6);
+    background: -webkit-linear-gradient(to right, #EC6EAD, #3494E6); 
+    background: linear-gradient(to right, #EC6EAD, #3494E6);
 
     color: #303438;
     height:50px;
@@ -40,7 +40,7 @@ background: linear-gradient(to right, #EC6EAD, #3494E6);
 }
 
 #personal-detail-section {
-    height: 90px;
+    height: 100px;
     width: 800px;
     align-content: center;
 }
@@ -67,17 +67,31 @@ button{
     width: 100px;
     margin-left: 350px;
     border: 1px solid;
+    font-weight: bold;
     padding: 10px;
     background-color:rgb(177, 172, 172);
-
     opacity: 0.8;
     transition: 0.3s;
 }
-button:hover{
-    opacity: 1;
+.anchor{
+    width: 50px;
+    padding: 5px;
+    margin-top: 5px;
+    font-weight: bold;
+    border: 1px solid;
+    text-align: center;
+    opacity: 0.8;
+    background-color:rgb(177, 172, 172);
+    transition: 0.3s;
 }
-
-
+.anchor a{
+    color: black;
+    text-decoration: none;
+}
+button,a:hover{
+    opacity: 1;
+    cursor: pointer;
+}
 h1,
 h2,
 h3,

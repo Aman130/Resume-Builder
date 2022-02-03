@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <title>Resume Builder</title>
 </head>
 
@@ -27,7 +27,10 @@
                     </h1>
                     <p> <b>Phone no-</b> <span id="phone-number"> <%= detail.personal_detail.contact %> </span> </p>
                     <p> <b>Email-</b> <span id="email"> <%= detail.personal_detail.email %> </span> </p>
-                    <a href="/personal-detail/<%=detail.personal_detail.id%>">EDIT</a>
+                    <div class="anchor">
+                        <a href="/personal-detail/<%=detail.personal_detail.id%>">EDIT</a>
+                    </div>
+                    
                     <%}else{%>
                         <form method="GET" action="/personal-detail">
                             <button> ADD+ </button>
@@ -56,7 +59,9 @@
                                             <%=detail1.percent%>
                                         </h4>
                                     </div>
-                                    <a href="/education-detail/<%=detail1.id%>">EDIT</a>
+                                    <div class="anchor">
+                                        <a href="/education-detail/<%=detail1.id%>">EDIT</a>
+                                    </div>
                                 </li>
                                 
                                 <%} %>
@@ -77,7 +82,10 @@
                             <li>
                                 <b>Languages: </b><%=detail.technical_skills.languages%>
                             </li>
-                            <a href="/techincal-skills/<%=detail.technical_skills.id%>">EDIT</a>
+                            <div class="anchor">
+                                <a href="/techincal-skills/<%=detail.technical_skills.id%>">EDIT</a>
+                            </div>
+                            
                         <%}else{%>
                             <form method="GET" action="/technical-skills">
                             <button>ADD+</button>
@@ -105,7 +113,10 @@
                                     </div>
                                 </div>
                             </li>
-                            <a href="/project-detail/<%=project.id%>">EDIT</a>
+                            <div class="anchor">
+                                <a href="/project-detail/<%=project.id%>">EDIT</a>
+                            </div>
+                            
                         <%}%>
                     </ul>
                     <form method="GET" action="/project-detail">
@@ -130,7 +141,10 @@
                                     </div>
                                 </div>
                             </li>
-                            <a href="/work-experience/<%=workDetail.id%>">EDIT</a>
+                            <div class="anchor">
+                                <a href="/work-experience/<%=workDetail.id%>">EDIT</a>
+                            </div>
+                            
                         <%}%>
                     </ul>
                     <form method="GET" action="/work-experience">
@@ -147,7 +161,10 @@
                             <li style="margin-top: 5px;">
                                 <%=achieve.achievement%>
                             </li>
-                            <a href="/achievement/<%=achieve.id%>">EDIT</a>
+                            <div class="anchor">
+                                <a href="/achievement/<%=achieve.id%>">EDIT</a>
+                            </div>
+                            
                         <%}%>
                     </ul>
                     <form method="GET" action="/achievement">
