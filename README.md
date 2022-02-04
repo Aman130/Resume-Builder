@@ -1,3 +1,3 @@
 # Resume-Builder
 
-Automated Resume Builder (In Progress)
+Automated Resume Builder
