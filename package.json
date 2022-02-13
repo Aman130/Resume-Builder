@@ -2,6 +2,7 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.2",
+    "jquery": "^3.6.0",
     "nodemon": "^2.0.15",
     "uuid": "^8.3.2"
   },
