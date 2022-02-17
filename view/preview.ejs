@@ -14,9 +14,15 @@
 
 <body>
     <nav class="navbar">
-        <h1>Resume Builder</h1>
-        <button class="preview-btn" onclick="CreatePDFfromHTML()">Print PDF</button>
-        <a class="preview-btn" href="/">Go Back</a>
+        <div>
+            <form method="GET" action="/">
+                <button class="preview-btn" type="submit">Back To Edit Page</button>
+            </form>
+        </div>
+        <h1>AUTOMATED RESUME BUILDER</h1>
+        <div>
+            <button onclick="CreatePDFfromHTML()" class="preview-btn">Print PDF</button>
+        </div>
     </nav>
     <div class="top-content">
         <div id="main-content">

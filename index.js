@@ -17,7 +17,7 @@ app.use(express.urlencoded({
     extended: true
 }));
 
-const detail = {};
+let detail = {};
 detail.education_detail = [];
 detail.project_detail=[];
 detail.work_experience=[];
@@ -27,6 +27,14 @@ app.get("/", (req, res) => {
     res.render('index', {
         detail: detail,
     });
+});
+app.get("/clear",(req,res)=>{
+    detail = {};
+    detail.education_detail = [];
+    detail.project_detail=[];
+    detail.work_experience=[];
+    detail.achievement_detail=[];
+    res.redirect('/');
 });
 app.get("/preview", (req, res) => {
     res.render('preview', {

@@ -14,10 +14,15 @@
 
 <body>
     <nav class="navbar">
-        <h1>Resume Builder</h1>
-        <form method="GET" action="/preview"> 
-            <button class="preview-btn">Preview Resume</button>
-        </form>
+        <div>
+            <form method="GET" action="/clear">
+                <button class="preview-btn" type="submit">Clear</button>
+            </form>
+        </div>
+        <h1>AUTOMATED RESUME BUILDER</h1>
+        <div>
+            <a href="/preview" class="preview-btn">Preview</a>
+        </div>
     </nav>
     <div class="top-content">
         <div id="main-content">
