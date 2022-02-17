@@ -15,6 +15,22 @@ body{
     justify-content: center;
     align-items: center;
 }
+.preview-btn{
+    width: 120px;
+    margin-left: 350px;
+    border: 1px solid black;
+    font-weight: bold;
+    padding:6px;
+    background-color:#d370a1;
+    text-decoration: none;
+    color: white;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+.preview-btn:hover{
+    opacity: 1;
+    cursor: pointer;
+}
 
 .top-content {
     font-family: "Noto Sans", sans-serif;
@@ -38,7 +54,32 @@ body{
     flex-direction: column;
     padding: 10px;
 }
+.anchor{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.anchor div{
+    width: 50px;
+    padding: 5px;
 
+    border: 2px solid blue;
+    font-weight: bold;
+    margin-right: 10px;
+    border: 1px solid;
+    text-align: center;
+    opacity: 0.8;
+    background-color:rgb(177, 172, 172);
+    transition: 0.3s;
+    display: inline;
+}
+.anchor div:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+.anchor a{
+    color: black;
+    text-decoration: none;
+}
 #personal-detail-section {
     height: 100px;
     width: 800px;
@@ -63,7 +104,7 @@ body{
 .info-card-head h3{
     margin-left: 5px;
 }
-button{
+.btn{
     width: 100px;
     margin-left: 350px;
     border: 1px solid;
@@ -73,25 +114,12 @@ button{
     opacity: 0.8;
     transition: 0.3s;
 }
-.anchor{
-    width: 50px;
-    padding: 5px;
-    margin-top: 5px;
-    font-weight: bold;
-    border: 1px solid;
-    text-align: center;
-    opacity: 0.8;
-    background-color:rgb(177, 172, 172);
-    transition: 0.3s;
-}
-.anchor a{
-    color: black;
-    text-decoration: none;
-}
-button,a:hover{
+
+.btn:hover{
     opacity: 1;
     cursor: pointer;
 }
+
 h1,
 h2,
 h3,

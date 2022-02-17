@@ -1,6 +1,6 @@
 function CreatePDFfromHTML() {
     var HTML_Width = 800;
-    var HTML_Height = 1200;
+    var HTML_Height = 1100;
     var top_left_margin = 15;
     var PDF_Width = HTML_Width + (top_left_margin * 2);
     var PDF_Height = (PDF_Width * 1.5) + (top_left_margin * 2);
@@ -17,7 +17,7 @@ function CreatePDFfromHTML() {
             pdf.addPage(PDF_Width, PDF_Height);
             pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
         }
-        pdf.save("Your_PDF_Name.pdf");
+        pdf.save("Resume.pdf");
         $(".top-content").hide();
     });
 }

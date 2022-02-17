@@ -1,5 +1,6 @@
 const { defaultMaxListeners } = require('events');
 const express = require('express');
+const { isLinux } = require('nodemon/lib/utils');
 const app = express();
 const path = require('path');
 const port = 8080;
@@ -24,6 +25,11 @@ detail.achievement_detail=[];
 
 app.get("/", (req, res) => {
     res.render('index', {
+        detail: detail,
+    });
+});
+app.get("/preview", (req, res) => {
+    res.render('preview', {
         detail: detail,
     });
 });
@@ -196,6 +202,71 @@ app.post("/achievement/:id",(req,res)=>{
         }
     }
     detail.achievement_detail[ind]=req.body;
+    res.redirect('/');
+});
+
+app.get("/delete-personal-detail",(req,res)=>{
+    delete detail['personal_detail'];
+    res.redirect('/');
+});
+app.get("/delete-education-detail/:id",(req,res)=>{
+    const {id}=req.params;
+    let ind;
+    for(let i=0;i<detail.education_detail.length;i++){
+        if(detail.education_detail[i].id==id){
+            ind=i;
+            break;
+        }
+    }
+    let w = detail['education_detail'];
+    w.splice(ind, 1);
+    detail['education_detail'] = w;
+    res.redirect('/');
+});
+app.get("/delete-technical-skills/:id",(req,res)=>{
+    delete detail['technical_skills'];
+    res.redirect('/');
+});
+app.get("/delete-project-detail/:id",(req,res)=>{
+    const {id}=req.params;
+    let ind;
+    for(let i=0;i<detail.project_detail.length;i++){
+        if(detail.project_detail[i].id==id){
+            ind=i;
+            break;
+        }
+    }
+    let w = detail['project_detail'];
+    w.splice(ind, 1);
+    detail['project_detail'] = w;
+    res.redirect('/');
+});
+app.get("/delete-work-experience/:id",(req,res)=>{
+    const {id}=req.params;
+    let ind;
+    for(let i=0;i<detail.work_experience.length;i++){
+        if(detail.project_detail[i].id==id){
+            ind=i;
+            break;
+        }
+    }
+    let w = detail['work_experience'];
+    w.splice(ind, 1);
+    detail['work_experience'] = w;
+    res.redirect('/');
+});
+app.get("/delete-achievement/:id",(req,res)=>{
+    const {id}=req.params;
+    let ind;
+    for(let i=0;i<detail.achievement_detail.length;i++){
+        if(detail.achievement_detail[i].id==id){
+            ind=i;
+            break;
+        }
+    }
+    let w = detail['achievement_detail'];
+    w.splice(ind, 1);
+    detail['achievement_detail'] = w;
     res.redirect('/');
 });
 
